@@ -1,7 +1,7 @@
 # Arduino Soil Moisture LCD
 
 Small Arduino Uno project that reads a soil moisture sensor and shows the status on a 16x2 I2C LCD:
-"Status:" on the first row and "Soil is DRY / OK / WET" on the second row based on calibrated thresholds.
+`Status:` on the first row and "Soil is DRY / OK / WET" on the second row based on calibrated thresholds.
 
 ## Features
 
