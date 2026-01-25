@@ -24,6 +24,7 @@ REQUEST_LATENCY = Histogram(
 
 # health check
 @app.get("/health")
+
 def health():
     return {"status": "ok"}
 
