@@ -1,0 +1,65 @@
+services:
+  # main fastapi application
+  app:
+    build:
+      context: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/code
+    working_dir: /code
+    depends_on:
+      - prometheus
+    networks:
+      - monitoring
+
+  # time-series database for metrics
+  prometheus:
+    image: prom/prometheus:latest
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+      - ./alerts.yml:/etc/prometheus/alerts.yml
+    command:
+      - "--config.file=/etc/prometheus/prometheus.yml"
+    ports:
+      - "9090:9090"
+    networks:
+      - monitoring
+
+  # visual dashboard for metrics
+  grafana:
+    image: grafana/grafana:latest
+    ports:
+      - "3000:3000"
+    depends_on:
+      - prometheus
+    networks:
+      - monitoring
+
+  # alert routing and grouping
+  alertmanager:
+    image: prom/alertmanager:latest
+    volumes:
+      - ./alertmanager.yml:/etc/alertmanager/alertmanager.yml
+    command:
+      - '--config.file=/etc/alertmanager/alertmanager.yml'
+    ports:
+      - "9093:9093"
+    networks:
+      - monitoring
+
+  # custom bridge to send alerts to Discord
+  discord-bridge:
+    build:
+      context: ./discord-bridge
+    container_name: discord-bridge
+    environment:
+      - DISCORD_WEBHOOK=${DISCORD_WEBHOOK}
+    ports:
+      - "9094:9094"
+    networks:
+      - monitoring
+
+networks:
+  monitoring:
+    driver: bridge
