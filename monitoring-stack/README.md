@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # FastAPI Monitoring Stack
 
 Production-grade monitoring and alerting for FastAPI applications using Prometheus, Grafana, and Alertmanager.
@@ -39,7 +39,6 @@ Metrics Endpoints
 - /simulate_work - Simulated workload
 - /metrics - Prometheus metrics
 
-[Screenshots]
 
 
 
