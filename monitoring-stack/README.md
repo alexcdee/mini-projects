@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-
-=======
->>>>>>> dc7e918 (fix errors)
 # FastAPI Monitoring Stack
 
 Production-grade monitoring and alerting for FastAPI applications using Prometheus, Grafana, and Alertmanager.
@@ -41,11 +37,3 @@ Metrics Endpoints
 - /health - Health check
 - /simulate_work - Simulated workload
 - /metrics - Prometheus metrics
-
-
-
-
-<<<<<<< HEAD
-
-=======
->>>>>>> dc7e918 (fix errors)
