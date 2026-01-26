@@ -35,14 +35,14 @@ async def alertmanager_webhook(request: Request):
         elif status == "resolved":
             # short message when api is back up
             content = (
-                "✅ FastAPI app is BACK UP ✅\n"
+                "✅ FastAPI app is BACK UP\n"
                 f"[RESOLVED] {alertname} on {instance}\n"
                 "Severity: low\n"
                 "Summary: FastAPI is back up\n"
                 f"Details: service {instance} is now reachable"
             )
         else:
-            content = f"=== {status.upper()} {alertname} on {instance} ==="
+            content = f"{status.upper()} {alertname} on {instance}"
 
         messages.append(content)
 
