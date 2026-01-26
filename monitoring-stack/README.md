@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+
+=======
+>>>>>>> dc7e918 (fix errors)
 # FastAPI Monitoring Stack
 
 Production-grade monitoring and alerting for FastAPI applications using Prometheus, Grafana, and Alertmanager.
@@ -26,7 +30,6 @@ DISCORD_WBHOOK_URL=https://discord.com/api/weboooks/YOUR_WEBHOOK_URL
 3. Run the stack:
 ```bash
 docker compose up --build
-```
 
 Access
 - App: http://localhost:8000
@@ -38,3 +41,11 @@ Metrics Endpoints
 - /health - Health check
 - /simulate_work - Simulated workload
 - /metrics - Prometheus metrics
+
+
+
+
+<<<<<<< HEAD
+
+=======
+>>>>>>> dc7e918 (fix errors)
