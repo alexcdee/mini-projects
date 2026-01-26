@@ -23,6 +23,7 @@ async def alertmanager_webhook(request: Request):
         severity = labels.get("severity", "none")
 
         # format alert message based on status
+        if status == "firing":
             # detail message when api is down
             content = (
                 "🚨 FastAPI app is DOWN 🚨\n"
