@@ -14,7 +14,7 @@ Production-grade monitoring and alerting for FastAPI applications using Promethe
 - Prometheus
 - Grafana
 - Alertmanager
-- Docker Compose
+- Docker
 
 ## Setup
 
@@ -37,3 +37,9 @@ Metrics Endpoints
 - /health - Health check
 - /simulate_work - Simulated workload
 - /metrics - Prometheus metrics
+
+Simulate Test:
+docker compose stop app
+- wait for response down
+docker compose start app
+- wait for response up
